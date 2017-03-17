@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<div class="float-left">
+    @Html.ActionLink("Registrar Banco", "Mantener_Banco", "Banco")
+    <br/>
+<br/>
+    @Html.ActionLink("Registrar Sucursal", "Mantener_Sucursal", "Banco")
+       <br/>
+<br/>
+    @Html.ActionLink("Registrar Orden de Pago", "Mantener_OrdenPago", "Banco")
+</div>
+
+

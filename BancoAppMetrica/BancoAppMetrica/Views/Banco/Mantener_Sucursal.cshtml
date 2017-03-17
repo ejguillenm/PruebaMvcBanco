@@ -1,0 +1,45 @@
+﻿@model BancoAppMetrica.Models.SucursalModel
+@{
+    ViewBag.Title = "Mantener Sucursales";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Registrar Nueva Sucursal.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registrar Banco</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.idSucursal)
+                @Html.TextBoxFor(m => m.idSucursal)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.idBanco)
+                @Html.TextBoxFor(m => m.idBanco)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.nombreSucursal)
+                @Html.TextBoxFor(m => m.nombreSucursal)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.nombreSucursal)
+                @Html.TextBoxFor(m => m.nombreSucursal)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.fecRegistro)
+                @Html.TextBoxFor(m => m.fecRegistro)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

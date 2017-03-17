@@ -1,0 +1,41 @@
+﻿@model BancoAppMetrica.Models.BancoModel
+@{
+    ViewBag.Title = "Mantener_Banco";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Registrar Nuevo Banco.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registrar Banco</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.idBanco)
+                @Html.TextBoxFor(m => m.idBanco)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.nombreBanco)
+                @Html.TextBoxFor(m => m.nombreBanco)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.direccionBanco)
+                @Html.TextBoxFor(m => m.direccionBanco)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.fecRegistro)
+                @Html.TextBoxFor(m => m.fecRegistro)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

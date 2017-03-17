@@ -1,0 +1,45 @@
+﻿@model BancoAppMetrica.Models.OrdenPagoModel
+@{
+    ViewBag.Title = "Mantener Ordenes de Pago";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Registrar Nuevo Pago.</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registrar Orden de Pago</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.idSucursal)
+                @Html.TextBoxFor(m => m.idSucursal)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.estado)
+                @Html.TextBoxFor(m => m.estado)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.moneda)
+                @Html.TextBoxFor(m => m.moneda)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.monto)
+                @Html.TextBoxFor(m => m.monto)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.fecPago)
+                @Html.TextBoxFor(m => m.fecPago)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
